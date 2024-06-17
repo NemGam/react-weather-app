@@ -4,19 +4,20 @@ import React from "react";
 function CurrentWeather(props){
     return(
         <div className="weather">
+
             <p className="city">Moscow{props.city}</p>
 
-            <div className="image-container">
+            <div className="main-section">
                 <img alt="weather" className="weather-icon" src="icons/01d.png"/>
-                <p className="weather-desc">Sunny{props.weather}</p>
+                <div className="temperature-container">
+                    <p className="temperature">44°C</p>
+                    <p className="weather-desc">Partly Sunny{props.weather}</p>
+                </div>
+                
             </div>
             
             <div className="bottom">
-                <p className="temperature">44°C</p>
                 <div className="details">
-                    <div className="parameter-row">
-                        <span className="param-label">Details</span>
-                    </div>
                     <div className="parameter-row">
                         <span className="param-label">Feels-like</span>
                         <span className="param-value">111°C</span>
