@@ -1,20 +1,25 @@
 import "./CurrentWeather.css";
 import React from "react";
 
-function CurrentWeather({props}) {
-    if (!props) return;
+function CurrentWeather({props: {
+    city = '--',
+    weather = [],
+    icon = weather[0].icon || "unknown",
+    main = {temp: null, feels_like: null, humidity: '--', pressure: '--'},
+    wind = {speed: '--'},
+    dt = 0,
+}}) {
 
-    console.log({props});
     return (
         <div className="weather">
 
-            <p className="city">{props.city}</p>
+            <p className="city">{city}</p>
             
             <div className="main-section">
-                <img alt="weather" className="weather-icon" src = {`icons/${props.weather[0].icon}.png`} />
+                <img alt="weather" className="weather-icon" src = {`icons/${icon}.png`} />
                 <div className="temperature-container">
-                    <p className="temperature">{Math.round((props.main.temp - 273.14) * 10) / 10}°C</p>
-                    <p className="weather-desc">{props.weather[0].description}</p>
+                    <p className="temperature">{main.temp == null? "--" : (Math.round((main.temp) * 10) / 10)}°C</p>
+                    <p className="weather-desc">{weather[0].description}</p>
                 </div>
             </div>
 
@@ -22,19 +27,19 @@ function CurrentWeather({props}) {
                 <div className="details">
                     <div className="parameter-row">
                         <span className="param-label">Feels-like</span>
-                        <span className="param-value">{Math.round((props.main.feels_like - 273.14) * 10) / 10}°C</span>
+                        <span className="param-value">{main.feels_like == null? "--" : (Math.round((main.feels_like) * 10) / 10)}°C</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Wind</span>
-                        <span className="param-value">{props.wind.speed} m/s</span>
+                        <span className="param-value">{wind.speed} m/s</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Humidity</span>
-                        <span className="param-value">{props.main.humidity}%</span>
+                        <span className="param-value">{main.humidity}%</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Pressure</span>
-                        <span className="param-value">{props.main.pressure} hPa</span>
+                        <span className="param-value">{main.pressure} hPa</span>
                     </div>
                 </div>
 
@@ -43,6 +48,8 @@ function CurrentWeather({props}) {
         </div>
     );
 }
+
+
 
 export default CurrentWeather
 
