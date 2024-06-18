@@ -59,7 +59,7 @@ function Forecast({ props }) {
     const forecast = formatForecast(props.list);
     return (
         <>
-            <label className="title">Daily</label>
+            <span className="title">Daily</span>
             <Accordion allowZeroExpanded>
                 {forecast.map((item, ind) => (
                     <AccordionItem key={ind}>
@@ -67,9 +67,9 @@ function Forecast({ props }) {
                             <AccordionItemButton>
                                 <div className="daily-item">
                                     <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`}></img>
-                                    <label className="day">{forecastDays[ind]}</label>
-                                    <label className="description">{item.weather[0].description}</label>
-                                    <label className="min-max">{Math.round(item.max_temp)}°C / {Math.round(item.min_temp)}°C</label>
+                                    <span className="day">{forecastDays[ind]}</span>
+                                    <span className="description">{item.weather[0].description}</span>
+                                    <span className="min-max">{Math.round(item.max_temp)}°C / {Math.round(item.min_temp)}°C</span>
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>

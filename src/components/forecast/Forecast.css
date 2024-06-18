@@ -1,0 +1,14 @@
+.accordion{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.title{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.daily-item{
+    background-color: #f5f5f5;
+}
