@@ -1,38 +1,40 @@
 import "./CurrentWeather.css";
 import React from "react";
 
-function CurrentWeather(props){
-    return(
+function CurrentWeather({props}) {
+    if (!props) return;
+
+    console.log({props});
+    return (
         <div className="weather">
 
-            <p className="city">Moscow{props.city}</p>
-
-            <div className="main-section">
-                <img alt="weather" className="weather-icon" src="icons/01d.png"/>
-                <div className="temperature-container">
-                    <p className="temperature">44°C</p>
-                    <p className="weather-desc">Partly Sunny{props.weather}</p>
-                </div>
-                
-            </div>
+            <p className="city">{props.city}</p>
             
+            <div className="main-section">
+                <img alt="weather" className="weather-icon" src = {`icons/${props.weather[0].icon}.png`} />
+                <div className="temperature-container">
+                    <p className="temperature">{Math.round((props.main.temp - 273.14) * 10) / 10}°C</p>
+                    <p className="weather-desc">{props.weather[0].description}</p>
+                </div>
+            </div>
+
             <div className="bottom">
                 <div className="details">
                     <div className="parameter-row">
                         <span className="param-label">Feels-like</span>
-                        <span className="param-value">111°C</span>
+                        <span className="param-value">{Math.round((props.main.feels_like - 273.14) * 10) / 10}°C</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Wind</span>
-                        <span className="param-value">2 m/s</span>
+                        <span className="param-value">{props.wind.speed} m/s</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Humidity</span>
-                        <span className="param-value">2%</span>
+                        <span className="param-value">{props.main.humidity}%</span>
                     </div>
                     <div className="parameter-row">
                         <span className="param-label">Pressure</span>
-                        <span className="param-value">1100 pha</span>
+                        <span className="param-value">{props.main.pressure} hPa</span>
                     </div>
                 </div>
 
