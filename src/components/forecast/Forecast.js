@@ -43,6 +43,7 @@ const formatForecast = (forecast) => {
                     max = n.main.temp;
                 }
             }
+            if (min >= 1000 || max <= -1000) return;
             result.push({max_temp: max, min_temp: min, ...maxEl});
         }
     );
@@ -55,8 +56,8 @@ function Forecast({ props }) {
 
     const day = new Date().getDay();
     const forecastDays = WEEK_DAYS.slice(day, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, day));
-
     const forecast = formatForecast(props.list);
+    console.log(forecast);
     return (
         <>
             <span className="title">Daily</span>
@@ -66,8 +67,8 @@ function Forecast({ props }) {
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <div className="daily-item">
-                                    <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`}></img>
                                     <span className="day">{forecastDays[ind]}</span>
+                                    <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`}></img>
                                     <span className="description">{item.weather[0].description}</span>
                                     <span className="min-max">{Math.round(item.max_temp)}°C / {Math.round(item.min_temp)}°C</span>
                                 </div>
