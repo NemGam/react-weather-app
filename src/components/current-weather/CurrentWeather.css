@@ -56,28 +56,6 @@
     width: 70px;
 }
 
-.bottom{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .details {
     width: 100%;
-}
-
-.parameter-row{
-    display: flex;
-    justify-content: space-between;
-}
-
-.param-label{
-    text-align: left;
-    font-size: 16px;
-}
-
-.param-value{
-    text-align: right;
-    font-weight: bold;
-    font-size: 16px;
 }

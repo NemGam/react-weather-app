@@ -1,0 +1,17 @@
+.parameter_label, .parameter_row, .parameter_value{
+    color: white;
+}
+
+.parameter_row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.parameter_label{
+    text-align: left;
+}
+
+.parameter_value{
+    text-align: right;
+    font-weight: bold;
+}

@@ -3,6 +3,7 @@ import React from "react";
 import { Accordion, AccordionItemHeading, AccordionItemPanel, AccordionItem, AccordionItemButton, AccordionItemState }
     from "react-accessible-accordion";
 import "./Forecast.css";
+import WeatherDescription from "../weather-description/WeatherDescription";
 
 const WEEK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -82,24 +83,10 @@ function Forecast({ props }) {
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
-                                <div className="details">
-                                    <div className="parameter-row">
-                                        <span className="param-label">Feels-like</span>
-                                        <span className="param-value">{item.main.feels_like == null? "--" : (Math.round((item.main.feels_like) * 10) / 10)}°C</span>
-                                    </div>
-                                    <div className="parameter-row">
-                                        <span className="param-label">Wind</span>
-                                        <span className="param-value">{item.wind.speed} m/s</span>
-                                    </div>
-                                    <div className="parameter-row">
-                                        <span className="param-label">Humidity</span>
-                                        <span className="param-value">{item.main.humidity}%</span>
-                                    </div>
-                                    <div className="parameter-row">
-                                        <span className="param-label">Pressure</span>
-                                        <span className="param-value">{item.main.pressure} hPa</span>
-                                    </div>
+                                <div className="accordion-panel-container">
+                                    <WeatherDescription props={{item, font_size: '14px'}}/>
                                 </div>
+                                
                             </AccordionItemPanel>
                         </AccordionItem>
                     ))}
