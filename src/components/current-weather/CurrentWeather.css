@@ -1,13 +1,13 @@
 .weather {
     width: 50%;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 180px;
+    max-width: 190px;
     border-radius: 8px;
     box-shadow: 10px -2px 20px 2px rgba(0 0 0 / 30%);
     color: white;
     background: rgb(64,57,190);
     background: linear-gradient(0deg, rgba(64,57,190,1) 0%, rgba(0,231,255,1) 100%);
-    margin: 20px auto 0 auto;
+    margin: 20px auto 20px auto;
     padding: 0 30px 30px 30px;
 }
 
@@ -18,7 +18,7 @@
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 32px;
     line-height: 1;
     margin: 0;
     letter-spacing: 1px;
@@ -28,8 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
-
+    margin-bottom: 25px;
 }
 
 .temperature-container{
@@ -38,7 +37,7 @@
 }
 
 .weather-desc{
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1;
     margin: 0;
     text-align: center;
@@ -47,14 +46,14 @@
 .temperature {
     font-weight: bold;
     /*font-size: 60px;*/
-    font-size: clamp(2.5rem, 10vw, 60px);
+    font-size: clamp(2.3rem, 10vw, 35px);
     width: auto;
-    letter-spacing: -4px;
-    margin: 10px 10px -5px 10px;
+    letter-spacing: -3px;
+    margin: 8px 8px -3px 8px;
 }
 
 .weather-icon{
-    width: 100px;
+    width: 70px;
 }
 
 .bottom{
@@ -74,11 +73,11 @@
 
 .param-label{
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .param-value{
     text-align: right;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }

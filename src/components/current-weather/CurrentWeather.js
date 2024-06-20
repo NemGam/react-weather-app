@@ -42,7 +42,6 @@ function CurrentWeather({props: {
                         <span className="param-value">{main.pressure} hPa</span>
                     </div>
                 </div>
-
             </div>
 
         </div>

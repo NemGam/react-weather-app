@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import { Accordion, AccordionItemHeading, AccordionItemPanel, AccordionItem, AccordionItemButton }
+import { Accordion, AccordionItemHeading, AccordionItemPanel, AccordionItem, AccordionItemButton, AccordionItemState }
     from "react-accessible-accordion";
 import "./Forecast.css";
 
@@ -61,25 +61,52 @@ function Forecast({ props }) {
     return (
         <>
             <span className="title">Daily</span>
-            <Accordion allowZeroExpanded>
-                {forecast.map((item, ind) => (
-                    <AccordionItem key={ind}>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                                <div className="daily-item">
-                                    <span className="day">{forecastDays[ind]}</span>
-                                    <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`}></img>
-                                    <span className="description">{item.weather[0].description}</span>
-                                    <span className="min-max">{Math.round(item.max_temp)}°C / {Math.round(item.min_temp)}°C</span>
+            <div className="daily-container">    
+                <Accordion allowZeroExpanded>
+                    {forecast.map((item, ind) => (
+                        
+                        <AccordionItem key={ind}>
+                            <AccordionItemHeading>
+                                <AccordionItemButton>
+                                    <div className="daily-item">
+                                        <span className="day">{forecastDays[ind]}</span>
+                                        <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`}></img>
+                                        <span className="description">{item.weather[0].description}</span>
+                                        <span className="min-max">{Math.round(item.max_temp)}°C / {Math.round(item.min_temp)}°C</span>
+                                        <AccordionItemState>
+                                        {({ expanded }) => 
+                                            (expanded ? <span className="open-close-arrow">▲</span> 
+                                                      : <span className="open-close-arrow">▼</span>)}
+                                        </AccordionItemState>
+                                    </div>
+                                </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                                <div className="details">
+                                    <div className="parameter-row">
+                                        <span className="param-label">Feels-like</span>
+                                        <span className="param-value">{item.main.feels_like == null? "--" : (Math.round((item.main.feels_like) * 10) / 10)}°C</span>
+                                    </div>
+                                    <div className="parameter-row">
+                                        <span className="param-label">Wind</span>
+                                        <span className="param-value">{item.wind.speed} m/s</span>
+                                    </div>
+                                    <div className="parameter-row">
+                                        <span className="param-label">Humidity</span>
+                                        <span className="param-value">{item.main.humidity}%</span>
+                                    </div>
+                                    <div className="parameter-row">
+                                        <span className="param-label">Pressure</span>
+                                        <span className="param-value">{item.main.pressure} hPa</span>
+                                    </div>
                                 </div>
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel></AccordionItemPanel>
-                    </AccordionItem>
-                ))}
-
-            </Accordion>
+                            </AccordionItemPanel>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
         </>
+        
     );
 }
 
