@@ -61,7 +61,6 @@ function Forecast({ props }) {
     console.log(forecast);
     return (
         <>
-            <span className="title">Daily</span>
             <div className="daily-container">    
                 <Accordion allowZeroExpanded>
                     {forecast.map((item, ind) => (
@@ -82,11 +81,8 @@ function Forecast({ props }) {
                                     </div>
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel>
-                                <div className="accordion-panel-container">
-                                    <WeatherDescription props={{item, font_size: '14px'}}/>
-                                </div>
-                                
+                            <AccordionItemPanel>                
+                                <WeatherDescription data={item} font_size='14px'/>
                             </AccordionItemPanel>
                         </AccordionItem>
                     ))}

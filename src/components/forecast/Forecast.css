@@ -1,10 +1,12 @@
 .accordion{
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: visible;
-    padding: 25px 15px;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .title{
@@ -17,9 +19,13 @@
 .daily-container{
     background: rgba(0, 71, 170, 0.25);
     border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
 
 .daily-item{
+    z-index: 10;
     border-radius: 10px;
     box-shadow: 5px -2px 20px 2px rgba(0 0 0 / 30%);
     align-items: center;
@@ -32,12 +38,11 @@
     padding: 15px;
     background: rgb(64,57,190);
     background: linear-gradient(0deg, rgba(64,57,190,1) 0%, rgba(0,231,255,1) 100%);
-
 }
 
 .icon-small{
     width: 50px;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
 }
 
 .day{
@@ -60,15 +65,21 @@
 .open-close-arrow{
     color: white;
     cursor: pointer;
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgb(4, 135, 155);
     width: 100%;
     border-radius: 6px;
     user-select: none;
+    z-index: 1;
 }
 
-.accordion-panel-container{
+
+.accordion__panel{
+    z-index: 1;
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
     padding: 15px 20px;
     background-color: rgb(9, 9, 143);
+    z-index: -1;
+    position: relative;
 }
+

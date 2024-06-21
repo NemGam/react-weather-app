@@ -3,7 +3,7 @@ import "./CurrentWeather.css";
 import React from "react";
 
 function CurrentWeather({props}) {
-    console.log(props);
+
     return (
         <div className="weather">
 
@@ -18,7 +18,7 @@ function CurrentWeather({props}) {
             </div>
 
             <div className="bottom">
-                <WeatherDescription props={props}/>
+                <WeatherDescription data={props}/>
             </div>
 
         </div>
