@@ -58,7 +58,7 @@ function Forecast({ props }) {
     const day = new Date().getDay();
     const forecastDays = WEEK_DAYS.slice(day, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, day));
     const forecast = formatForecast(props.list);
-    console.log(forecast);
+
     return (
         <>
             <div className="daily-container">    
@@ -81,10 +81,12 @@ function Forecast({ props }) {
                                     </div>
                                 </AccordionItemButton>
                             </AccordionItemHeading>
+
                             <AccordionItemPanel>                
                                 <WeatherDescription data={item} font_size='14px'/>
                             </AccordionItemPanel>
                         </AccordionItem>
+                        
                     ))}
                 </Accordion>
             </div>
