@@ -4,7 +4,8 @@
     overflow-x: auto;
     overflow-y: visible;
     gap: 20px;
-    justify-content: center;
+    padding: 0 20px;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
 }
@@ -20,8 +21,9 @@
     background: rgba(0, 71, 170, 0.25);
     border-radius: 16px;
     align-items: center;
-    justify-content: center;
+    
     height: 300px;
+    
 }
 
 .daily-item{
@@ -73,18 +75,12 @@
 }
 
 
-.accordion__panel:not([hidden]){
+.accordion__panel{
     border-radius: 0 0 10px 10px;
     margin-top: -10px;
     padding: 15px 20px;
     background-color: rgb(9, 9, 143);
     z-index: -1;
     position: relative;
-    transition: all 2s linear;
-}
-
-.accordion__panel[hidden]{
-    background-color: red;
-    margin-top: -100px;
 }
 
