@@ -37,6 +37,7 @@ function App() {
             <Search onSearchChange={handleOnSearchChange} />
             {currentWeather && <CurrentWeather props={currentWeather} />}
             {futureWeather && <Forecast props={futureWeather} />}
+            
         </div>
     );
 }

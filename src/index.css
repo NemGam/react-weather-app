@@ -1,13 +1,23 @@
 body {
-  margin: 0;
-  font-family: 'Times New Roman', Times, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #b6cee6;
-  min-width: 300px;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #b6cee6;
+    min-width: 300px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.weather-icons-license{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    font-size: 12px;
 }
