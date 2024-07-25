@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NemGam.github.io/react-weather-app/static/css/main.2ebfc2d3.css",
+    "main.js": "/NemGam.github.io/react-weather-app/static/js/main.83c0e8e5.js",
+    "static/js/453.15c8c274.chunk.js": "/NemGam.github.io/react-weather-app/static/js/453.15c8c274.chunk.js",
+    "index.html": "/NemGam.github.io/react-weather-app/index.html",
+    "main.2ebfc2d3.css.map": "/NemGam.github.io/react-weather-app/static/css/main.2ebfc2d3.css.map",
+    "main.83c0e8e5.js.map": "/NemGam.github.io/react-weather-app/static/js/main.83c0e8e5.js.map",
+    "453.15c8c274.chunk.js.map": "/NemGam.github.io/react-weather-app/static/js/453.15c8c274.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ebfc2d3.css",
+    "static/js/main.83c0e8e5.js"
+  ]
+}
