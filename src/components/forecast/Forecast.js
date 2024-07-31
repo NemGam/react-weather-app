@@ -8,11 +8,11 @@ import WeatherDescription from "../weather-description/WeatherDescription";
 const WEEK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const splitForcasts = (forecast) => {
-    const today = new Date(new Date(Date.now()).toLocaleDateString()).getDate();
-    
+    const today = Date.parse(new Date(Date.now()).toLocaleDateString());
+
     const forecasts = [[], [], [], [], [], []]; //Today + 5 days
     forecast.forEach(element => {
-        forecasts[new Date(new Date(element.dt * 1000).toLocaleDateString()).getDate() - today].push((element));
+        forecasts[(Date.parse(new Date(element.dt * 1000).toLocaleDateString()) - today) / (1000 * 60 * 60 * 24)].push((element));
     });
 
     forecasts.shift(); //Removing today temperatures
